@@ -20,9 +20,27 @@ public class QuickSort {
         return i;
     }
 
+    private static int part2(int[] nums, int left, int right) {
+        int key = nums[right];
+        int i = left;
+        int t;
+        for(int j=left; j<right; j++) {
+            if(nums[j] < key) {
+                t = nums[i];
+                nums[i] = nums[j];
+                nums[j] = t;
+                i++;
+            }
+        }
+        t = nums[i];
+        nums[i] = nums[right];
+        nums[right] = t;
+        return i;
+    }
+
     private static void divide(int[] nums, int left, int right) {
         if(left < right) {
-            int mid = partition(nums, left, right);
+            int mid = part2(nums, left, right);
             divide(nums, left, mid-1);
             divide(nums, mid+1, right);
         }
