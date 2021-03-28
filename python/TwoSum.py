@@ -12,6 +12,7 @@ class Solution:
         return []
 
 
-s = Solution()
-assert sorted(s.twoSum([2, 7, 11, 15], 9), reverse=False) == [0, 1]
-assert sorted(s.twoSum([3, 2, 4], 6), reverse=False) == [1, 2]
+if __name__ == '__main__':
+    s = Solution()
+    assert sorted(s.twoSum([2, 7, 11, 15], 9), reverse=False) == [0, 1]
+    assert sorted(s.twoSum([3, 2, 4], 6), reverse=False) == [1, 2]
